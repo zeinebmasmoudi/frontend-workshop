@@ -1,0 +1,57 @@
+<div class="table-container">
+  <h1 class="table-title">Providers</h1>
+  <table class="table">
+    <thead>
+      <tr class="table-header">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of providers" class="table-row">
+        <td>{{ provider.id }}</td>
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.email }}</td>
+        <td>{{ provider.address }}</td>
+        <td>
+          <button (click)="openEditModal(provider)" class="action-button edit-button">edit</button>
+          <button (click)="openDeleteModal(provider)" class="action-button delete-button">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Edit Modal -->
+  <div *ngIf="showEditModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">Edit Provider</h2>
+      <form [formGroup]="editForm">
+        <label class="form-label">Name</label>
+        <input formControlName="name" class="form-input" />
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-input" />
+        <label class="form-label">Address</label>
+        <input formControlName="address" class="form-input" />
+        <div class="modal-actions">
+          <button (click)="closeEditModal()" class="modal-button cancel-button">Cancel</button>
+          <button (click)="saveChanges()" class="modal-button save-button">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Delete Modal -->
+  <div *ngIf="showDeleteModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">Confirm Delete</h2>
+      <p>Are you sure you want to delete provider {{ selectedProvider?.name }}?</p>
+      <div class="modal-actions">
+        <button (click)="closeDeleteModal()" class="modal-button cancel-button">Cancel</button>
+        <button (click)="confirmDelete()" class="modal-button delete-confirm-button">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

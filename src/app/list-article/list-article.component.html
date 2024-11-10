@@ -1,0 +1,63 @@
+<div class="table-container">
+  <h1 class="table-title">Articles</h1>
+  
+  <table class="table">
+    <thead>
+      <tr class="table-header">
+        <th>ID</th>
+        <th>Label</th>
+        <th>Price</th>
+        <th>Picture</th>
+        <th>Provider ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles" class="table-row">
+        <td>{{ article.id }}</td>
+        <td>{{ article.label }}</td>
+        <td>{{ article.price }}</td>
+        <td>
+          <img [src]="article.picture" alt="Picture of {{ article.label }}" class="article-image" />
+        </td>
+        <td>{{ article.providerId }}</td>
+        <td>
+          <button (click)="openEditModal(article)" class="action-button edit-button">Edit</button>
+          <button (click)="openDeleteModal(article)" class="action-button delete-button">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Edit Modal -->
+  <div *ngIf="showEditModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">Edit Article</h2>
+      <form [formGroup]="editForm">
+        <label class="form-label">Label</label>
+        <input formControlName="label" class="form-input" />
+        <label class="form-label">Price</label>
+        <input formControlName="price" type="number" class="form-input" />
+        <label class="form-label">Picture</label>
+        <input formControlName="picture" class="form-input" />
+        <label class="form-label">Provider ID</label>
+        <input formControlName="providerId" class="form-input" />
+        <div class="modal-actions">
+          <button (click)="closeEditModal()" class="modal-button cancel-button">Cancel</button>
+          <button type="button" (click)="saveChanges()" class="modal-button save-button">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Delete Modal -->
+  <div *ngIf="showDeleteModal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 class="modal-title">Are you sure you want to delete this article?</h2>
+      <div class="modal-actions">
+        <button (click)="confirmDelete()" class="modal-button delete-confirm-button">Yes</button>
+        <button (click)="closeDeleteModal()" class="modal-button cancel-button">No</button>
+      </div>
+    </div>
+  </div>
+</div>

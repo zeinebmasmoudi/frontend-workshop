@@ -1,0 +1,22 @@
+<div class="form-container">
+  <h2 class="form-title">Add New Article</h2>
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="articleLabel" class="form-label">Label</label>
+          <input id="articleLabel" type="text" formControlName="articleLabel" class="form-input" placeholder="Enter label" required />
+      </div>
+      <div class="form-group">
+          <label for="articlePrice" class="form-label">Price</label>
+          <input id="articlePrice" type="number" formControlName="articlePrice" class="form-input" placeholder="Enter price" required />
+      </div>
+      <div class="form-group">
+          <label for="articlePicture" class="form-label">Picture URL</label>
+          <input id="articlePicture" type="text" formControlName="articlePicture" class="form-input" placeholder="Enter picture URL" required />
+      </div>
+      <div class="form-group">
+          <label for="providerId" class="form-label">Provider ID</label>
+          <input id="providerId" type="text" formControlName="providerId" class="form-input" placeholder="Enter provider ID" required />
+      </div>
+      <button type="submit" class="submit-button" [disabled]="articleForm.invalid">Add Article</button>
+  </form>
+</div>

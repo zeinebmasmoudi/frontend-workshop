@@ -1,0 +1,151 @@
+/* Table Container */
+.table-container {
+    overflow-x: auto;
+    padding: 20px;
+  }
+  
+  /* Table Title */
+  .table-title {
+    font-size: 2rem;
+    padding-bottom: 16px;
+    color: #333;
+  }
+  
+  /* Table Styling */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .table-header {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .table-header th {
+    padding: 12px;
+    font-weight: 600;
+    text-align: left;
+  }
+  
+  .table-row {
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+  }
+  
+  .table-row:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .table td {
+    padding: 12px;
+    color: #555;
+  }
+  
+  /* Action Buttons */
+  .action-button {
+    font-size: 0.9rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .edit-button {
+    color: #007bff;
+  }
+  
+  .edit-button:hover {
+    color: #0056b3;
+  }
+  
+  .delete-button {
+    color: #d9534f;
+  }
+  
+  .delete-button:hover {
+    color: #c9302c;
+  }
+  
+  /* Modal Overlay */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 24px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* Form Label & Input */
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .cancel-button {
+    background-color: #ccc;
+    margin-right: 8px;
+  }
+  
+  .save-button {
+    background-color: #007bff;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-confirm-button {
+    background-color: #d9534f;
+  }
+  
+  .delete-confirm-button:hover {
+    background-color: #c9302c;
+  }
+  
